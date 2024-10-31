@@ -20,3 +20,10 @@
 <img src="pic/3.png" width="100%"/>
 
 <img src="pic/4.png" width="25%"/> <img src="pic/5.png" width="25%"/> <img src="pic/6.png" width="25%"/> <img src="pic/7.png" width="25%"/>
+
+```properties
+project.android.gradle.plugin.version=8.1.1
+project.kotlin.version=1.9.23
+project.compose.compiler.version=1.5.12
+project.compose.bom.version=2024.09.00
+```
