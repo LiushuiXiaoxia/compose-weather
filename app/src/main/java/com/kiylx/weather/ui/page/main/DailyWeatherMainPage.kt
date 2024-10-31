@@ -31,9 +31,9 @@ import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
-import androidx.compose.material3.pullrefresh.PullRefreshIndicator
-import androidx.compose.material3.pullrefresh.pullRefresh
-import androidx.compose.material3.pullrefresh.rememberPullRefreshState
+//import androidx.compose.material3.pullrefresh.PullRefreshIndicator
+//import androidx.compose.material3.pullrefresh.pullRefresh
+//import androidx.compose.material3.pullrefresh.rememberPullRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -175,17 +175,18 @@ fun MainPagePager(weatherPagerStateHolder: WeatherPagerStateHolder, index: Int) 
         mutableStateOf(false)
     }
     val scope = rememberCoroutineScope()
-    val pullRefreshState = rememberPullRefreshState(refreshing, onRefresh = {
-        scope.launch {
-            refreshing = true
-            weatherPagerStateHolder.run {
-                refresh()
-            }
-            delay(2400L)
-            refreshing = false
-        }
-    })
-    Box(modifier = Modifier.pullRefresh(pullRefreshState)) {
+//    val pullRefreshState = rememberPullRefreshState(refreshing, onRefresh = {
+//        scope.launch {
+//            refreshing = true
+//            weatherPagerStateHolder.run {
+//                refresh()
+//            }
+//            delay(2400L)
+//            refreshing = false
+//        }
+//    })
+//    Box(modifier = Modifier.pullRefresh(pullRefreshState)) {
+    Box() {
         Column(
             Modifier
                 .fillMaxSize()
@@ -251,7 +252,7 @@ fun MainPagePager(weatherPagerStateHolder: WeatherPagerStateHolder, index: Int) 
             Text(text = stringResource(R.string.data_from_hefeng), color = Color.Gray)
         }
         //下拉刷新指示器
-        PullRefreshIndicator(refreshing, pullRefreshState, Modifier.align(Alignment.TopCenter))
+//        PullRefreshIndicator(refreshing, pullRefreshState, Modifier.align(Alignment.TopCenter))
     }
 /*    SmartSwipeRefresh(
         modifier = Modifier.fillMaxSize(),
